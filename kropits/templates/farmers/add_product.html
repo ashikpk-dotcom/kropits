@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8 mx-auto">
+        <div class="card">
+            <div class="card-header bg-success text-white">
+                <h4 class="mb-0">{% trans "Add New Product" %}</h4>
+            </div>
+            <div class="card-body">
+                <form id="productForm">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="name" class="form-label">{% trans "Product Name" %}</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="category" class="form-label">{% trans "Category" %}</label>
+                        <select class="form-select" id="category" name="category" required>
+                            <option value="vegetables">{% trans "Vegetables" %}</option>
+                            <option value="fruits">{% trans "Fruits" %}</option>
+                            <option value="grains">{% trans "Grains" %}</option>
+                            <option value="pulses">{% trans "Pulses" %}</option>
+                            <option value="spices">{% trans "Spices" %}</option>
+                            <option value="dairy">{% trans "Dairy" %}</option>
+                        </select>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="quantity" class="form-label">{% trans "Quantity" %}</label>
+                            <input type="number" step="0.01" class="form-control" id="quantity" name="quantity" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="unit" class="form-label">{% trans "Unit" %}</label>
+                            <select class="form-select" id="unit" name="unit">
+                                <option value="kg">{% trans "Kilogram" %}</option>
+                                <option value="quintal">{% trans "Quintal" %}</option>
+                                <option value="ton">{% trans "Ton" %}</option>
+                                <option value="piece">{% trans "Piece" %}</option>
+                                <option value="dozen">{% trans "Dozen" %}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="price_per_unit" class="form-label">{% trans "Price per Unit" %}</label>
+                        <input type="number" step="0.01" class="form-control" id="price_per_unit" name="price_per_unit" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="form-label">{% trans "Description" %}</label>
+                        <textarea class="form-control" id="description" name="description" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-success w-100">{% trans "Add Product" %}</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.getElementById('productForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const formData = new FormData(this);
+    const data = Object.fromEntries(formData);
+
+    try {
+        const response = await fetch('/api/farmers/products/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${localStorage.getItem('access_token')}`,
+                'X-CSRFToken': getCookie('csrftoken')
+            },
+            body: JSON.stringify(data)
+        });
+
+        if (response.ok) {
+            window.location.href = '/api/farmers/dashboard/';
+        } else {
+            alert('Failed to add product');
+        }
+    } catch (error) {
+        alert('An error occurred');
+    }
+});
+</script>
+{% endblock %}

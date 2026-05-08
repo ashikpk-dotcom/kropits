@@ -1,0 +1,56 @@
+services:
+  - type: web
+    name: kropits-web
+    env: python
+    buildCommand: |
+      pip install -r requirements.txt
+      python manage.py collectstatic --noinput
+      python manage.py makemigrations --noinput
+      python manage.py migrate --noinput
+    startCommand: gunicorn kropits.wsgi:application -c gunicorn.conf.py
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DEBUG
+        value: false
+      - key: DATABASE_URL
+        fromDatabase:
+          name: kropits-db
+          property: connectionString
+      - key: REDIS_URL
+        fromService:
+          type: redis
+          name: kropits-redis
+          property: connectionString
+
+  - type: worker
+    name: kropits-worker
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: celery -A kropits worker -l info
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DATABASE_URL
+        fromDatabase:
+          name: kropits-db
+          property: connectionString
+      - key: REDIS_URL
+        fromService:
+          type: redis
+          name: kropits-redis
+          property: connectionString
+
+databases:
+  - name: kropits-db
+    databaseName: kropits
+    user: admin
+    plan: free
+
+redis:
+  name: kropits-redis
+  plan: free

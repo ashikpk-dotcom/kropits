@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block content %}
+<h2>{% trans "My Requests" %}</h2>
+<a href="/api/buyers/nearby-farmers/" class="btn btn-success mb-3">{% trans "Find Nearby Farmers" %}</a>
+
+<div class="row">
+    {% for request in requests %}
+    <div class="col-md-6 mb-3">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{ request.product.name }}</h5>
+                <p class="card-text">
+                    {% trans "Quantity" %}: {{ request.quantity_requested }} {{ request.unit }}<br>
+                    {% trans "Offered Price" %}: ₹{{ request.offered_price }}<br>
+                    {% trans "Status" %}: 
+                    <span class="badge bg-{% if request.status == 'pending' %}warning{% elif request.status == 'accepted' %}success{% else %}danger{% endif %}">
+                        {{ request.get_status_display }}
+                    </span><br>
+                    {% trans "Farmer" %}: {{ request.product.farmer.get_full_name }}
+                </p>
+            </div>
+        </div>
+    </div>
+    {% empty %}
+    <div class="col-12">
+        <div class="alert alert-info">{% trans "No requests yet." %}</div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

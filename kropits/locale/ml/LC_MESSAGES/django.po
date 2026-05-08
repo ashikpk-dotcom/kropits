@@ -1,0 +1,282 @@
+# Malayalam translations for KROPITS
+# Copyright (C) 2026 KROPITS
+# This file is distributed under the same license as the KROPITS project.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: KROPITS 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2026-05-04 12:00+0530\n"
+"Last-Translator: \n"
+"Language-Team: Malayalam <ml@li.org>\n"
+"Language: ml\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Welcome to KROPITS"
+msgstr "KROPITS-ലേക്ക് സ്വാഗതം"
+
+msgid "The future of agritech logistics. Connect directly with farmers, place orders, and get deliveries - all without middlemen."
+msgstr "അഗ്രിടെക് ലോജിസ്റ്റിക്സിന്റെ ഭാവി. നേരിട്ട് കർഷകരുമായി ബന്ധപ്പെടുക, ഓർഡറുകൾ സ്ഥാപിക്കുക, ഇടനിലക്കാരില്ലാതെ ഡെലിവറികൾ നേടുക."
+
+msgid "Farmers"
+msgstr "കർഷകർ"
+
+msgid "Buyers"
+msgstr "വാങ്ങുന്നവർ"
+
+msgid "Delivery Partners"
+msgstr "ഡെലിവറി പങ്കാളികൾ"
+
+msgid "List your products, manage inventory, and sell directly to buyers."
+msgstr "നിങ്ങളുടെ ഉൽപ്പന്നങ്ങൾ പട്ടികപ്പെടുത്തുക, ഇൻവെന്ററി കൈകാര്യം ചെയ്യുക, നേരിട്ട് വാങ്ങുന്നവർക്ക് വിൽക്കുക."
+
+msgid "Discover nearby farmers, place bulk orders, and get fresh produce delivered."
+msgstr "സമീപത്തെ കർഷകരെ കണ്ടെത്തുക, ബൾക്ക് ഓർഡറുകൾ സ്ഥാപിക്കുക, പുതിയ ഉൽപ്പന്നങ്ങൾ ഡെലിവർ ചെയ്യിക്കുക."
+
+msgid "Join our network, pick up orders, and deliver fresh produce to customers."
+msgstr "ഞങ്ങളുടെ ശൃംഖലയിൽ ചേരുക, ഓർഡറുകൾ പിക്ക് ചെയ്യുക, ഉപഭോക്താക്കൾക്ക് പുതിയ ഉൽപ്പന്നങ്ങൾ ഡെലിവർ ചെയ്യുക."
+
+msgid "Get Started"
+msgstr "തുടങ്ങുക"
+
+msgid "Login"
+msgstr "ലോഗിൻ"
+
+msgid "Register"
+msgstr "രജിസ്റ്റർ ചെയ്യുക"
+
+msgid "Home"
+msgstr "ഹോം"
+
+msgid "My Products"
+msgstr "എന്റെ ഉൽപ്പന്നങ്ങൾ"
+
+msgid "My Requests"
+msgstr "എന്റെ അഭ്യർത്ഥനകൾ"
+
+msgid "Orders"
+msgstr "ഓർഡറുകൾ"
+
+msgid "Language"
+msgstr "ഭാഷ"
+
+msgid "Logout"
+msgstr "ലോഗ്ഔട്ട്"
+
+msgid "Admin"
+msgstr "അഡ്മിൻ"
+
+msgid "Phone Number"
+msgstr "ഫോൺ നമ്പർ"
+
+msgid "First Name"
+msgstr "പേര്"
+
+msgid "Last Name"
+msgstr "കുടുംബപ്പേര്"
+
+msgid "Email"
+msgstr "ഇമെയിൽ"
+
+msgid "Role"
+msgstr "റോൾ"
+
+msgid "Farmer"
+msgstr "കർഷകൻ"
+
+msgid "Buyer"
+msgstr "വാങ്ങുന്നയാൾ"
+
+msgid "Delivery Partner"
+msgstr "ഡെലിവറി പങ്കാളി"
+
+msgid "Language Preference"
+msgstr "ഭാഷാ മുൻഗണന"
+
+msgid "Password"
+msgstr "പാസ്‌വേഡ്"
+
+msgid "Confirm Password"
+msgstr "പാസ്‌വേഡ് സ്ഥിരീകരിക്കുക"
+
+msgid "Already have an account? Login"
+msgstr "ഇതിനകം അക്കൗണ്ടുണ്ടോ? ലോഗിൻ ചെയ്യുക"
+
+msgid "Don't have an account? Register"
+msgstr "അക്കൗണ്ടില്ലേ? രജിസ്റ്റർ ചെയ്യുക"
+
+msgid "Add New Product"
+msgstr "പുതിയ ഉൽപ്പന്നം ചേർക്കുക"
+
+msgid "Product Name"
+msgstr "ഉൽപ്പന്നത്തിന്റെ പേര്"
+
+msgid "Category"
+msgstr "വിഭാഗം"
+
+msgid "Vegetables"
+msgstr "പച്ചക്കറികൾ"
+
+msgid "Fruits"
+msgstr "പഴങ്ങൾ"
+
+msgid "Grains"
+msgstr "ധാന്യങ്ങൾ"
+
+msgid "Pulses"
+msgstr "പയർവർഗ്ഗങ്ങൾ"
+
+msgid "Spices"
+msgstr "സുഗന്ധവ്യഞ്ജനങ്ങൾ"
+
+msgid "Dairy"
+msgstr "പാൽ ഉൽപ്പന്നങ്ങൾ"
+
+msgid "Quantity"
+msgstr "അളവ്"
+
+msgid "Unit"
+msgstr "യൂണിറ്റ്"
+
+msgid "Kilogram"
+msgstr "കിലോഗ്രാം"
+
+msgid "Quintal"
+msgstr "ക്വിന്റൽ"
+
+msgid "Ton"
+msgstr "ടൺ"
+
+msgid "Piece"
+msgstr "കഷ്ണം"
+
+msgid "Dozen"
+msgstr "ഡസൻ"
+
+msgid "Price per Unit"
+msgstr "യൂണിറ്റിന് വില"
+
+msgid "Description"
+msgstr "വിവരണം"
+
+msgid "Add Product"
+msgstr "ഉൽപ്പന്നം ചേർക്കുക"
+
+msgid "No products listed yet."
+msgstr "ഇതുവരെ ഉൽപ്പന്നങ്ങളൊന്നും പട്ടികപ്പെടുത്തിയിട്ടില്ല."
+
+msgid "Available"
+msgstr "ലഭ്യമാണ്"
+
+msgid "Unavailable"
+msgstr "ലഭ്യമല്ല"
+
+msgid "Toggle"
+msgstr "ടോഗിൾ"
+
+msgid "Edit"
+msgstr "എഡിറ്റ് ചെയ്യുക"
+
+msgid "Find Nearby Farmers"
+msgstr "സമീപത്തെ കർഷകരെ കണ്ടെത്തുക"
+
+msgid "No requests yet."
+msgstr "ഇതുവരെ അഭ്യർത്ഥനകളൊന്നുമില്ല."
+
+msgid "Order Number"
+msgstr "ഓർഡർ നമ്പർ"
+
+msgid "Product"
+msgstr "ഉൽപ്പന്നം"
+
+msgid "Total Amount"
+msgstr "മൊത്തം തുക"
+
+msgid "Status"
+msgstr "സ്ഥിതി"
+
+msgid "Payment"
+msgstr "പേയ്‌മെന്റ്"
+
+msgid "Actions"
+msgstr "പ്രവർത്തനങ്ങൾ"
+
+msgid "View"
+msgstr "കാണുക"
+
+msgid "No orders yet."
+msgstr "ഇതുവരെ ഓർഡറുകളൊന്നുമില്ല."
+
+msgid "Admin Dashboard"
+msgstr "അഡ്മിൻ ഡാഷ്‌ബോർഡ്"
+
+msgid "Total Users"
+msgstr "മൊത്തം ഉപയോക്താക്കൾ"
+
+msgid "Farmers"
+msgstr "കർഷകർ"
+
+msgid "Buyers"
+msgstr "വാങ്ങുന്നവർ"
+
+msgid "Orders"
+msgstr "ഓർഡറുകൾ"
+
+msgid "Quick Actions"
+msgstr "ദ്രുത പ്രവർത്തനങ്ങൾ"
+
+msgid "Verify Farmers"
+msgstr "കർഷകരെ സ്ഥിരീകരിക്കുക"
+
+msgid "Orders Overview"
+msgstr "ഓർഡറുകൾ അവലോകനം"
+
+msgid "Pricing Insights"
+msgstr "വില സൂചനകൾ"
+
+msgid "Statistics"
+msgstr "സ്ഥിതിവിവരക്കണക്കുകൾ"
+
+msgid "Available Products"
+msgstr "ലഭ്യമായ ഉൽപ്പന്നങ്ങൾ"
+
+msgid "Pending Orders"
+msgstr "തീർപ്പായി കാത്തിരിക്കുന്ന ഓർഡറുകൾ"
+
+msgid "Delivery Partners"
+msgstr "ഡെലിവറി പങ്കാളികൾ"
+
+msgid "Available Partners"
+msgstr "ലഭ്യമായ പങ്കാളികൾ"
+
+msgid "Connecting Farmers, Buyers, and Delivery Partners"
+msgstr "കർഷകരെ, വാങ്ങുന്നവരെ, ഡെലിവറി പങ്കാളികളെ ബന്ധിപ്പിക്കുന്നു"
+
+msgid "Offered Price"
+msgstr "വാഗ്ദാനം ചെയ്ത വില"
+
+msgid "Date"
+msgstr "തീയതി"
+
+msgid "Verify"
+msgstr "സ്ഥിരീകരിക്കുക"
+
+msgid "No farmers to verify."
+msgstr "സ്ഥിരീകരിക്കാൻ കർഷകരില്ല."
+
+msgid "No products available."
+msgstr "ഉൽപ്പന്നങ്ങളൊന്നും ലഭ്യമല്ല."
+
+msgid "success"
+msgstr "വിജയം"
+
+msgid "warning"
+msgstr "മുന്നറിയിപ്പ്"
+
+msgid "danger"
+msgstr "അപകടം"
+
+msgid "info"
+msgstr "വിവരം"

@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block content %}
+<h2>{% trans "Orders Overview" %}</h2>
+
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>{% trans "Order" %}</th>
+                <th>{% trans "Buyer" %}</th>
+                <th>{% trans "Farmer" %}</th>
+                <th>{% trans "Product" %}</th>
+                <th>{% trans "Amount" %}</th>
+                <th>{% trans "Status" %}</th>
+                <th>{% trans "Date" %}</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for order in orders %}
+            <tr>
+                <td>{{ order.order_number }}</td>
+                <td>{{ order.buyer_request.buyer.get_full_name }}</td>
+                <td>{{ order.buyer_request.product.farmer.get_full_name }}</td>
+                <td>{{ order.buyer_request.product.name }}</td>
+                <td>₹{{ order.total_amount }}</td>
+                <td>
+                    <span class="badge bg-warning">{{ order.get_status_display }}</span>
+                </td>
+                <td>{{ order.created_at|date:"Y-m-d" }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="7" class="text-center">{% trans "No orders yet." %}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

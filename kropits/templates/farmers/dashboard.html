@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block content %}
+<h2>{% trans "My Products" %}</h2>
+<a href="/api/farmers/add-product/" class="btn btn-success mb-3">{% trans "Add New Product" %}</a>
+
+<div class="row">
+    {% for product in products %}
+    <div class="col-md-4 mb-3">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{ product.name }}</h5>
+                <p class="card-text">
+                    {% trans "Category" %}: {{ product.get_category_display }}<br>
+                    {% trans "Quantity" %}: {{ product.quantity }} {{ product.get_unit_display }}<br>
+                    {% trans "Price" %}: ₹{{ product.price_per_unit }}/{{ product.get_unit_display }}<br>
+                    {% trans "Status" %}: 
+                    {% if product.is_available %}
+                        <span class="badge bg-success">{% trans "Available" %}</span>
+                    {% else %}
+                        <span class="badge bg-danger">{% trans "Unavailable" %}</span>
+                    {% endif %}
+                </p>
+                <div class="btn-group">
+                    <a href="/api/farmers/products/{{ product.id }}/" class="btn btn-sm btn-primary">{% trans "Edit" %}</a>
+                    <button onclick="toggleAvailability({{ product.id }})" class="btn btn-sm btn-warning">{% trans "Toggle" %}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% empty %}
+    <div class="col-12">
+        <div class="alert alert-info">{% trans "No products listed yet." %}</div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+function toggleAvailability(productId) {
+    fetch(`/api/farmers/availability/${productId}/`, {
+        method: 'PATCH',
+        headers: {
+            'Authorization': `Bearer ${localStorage.getItem('access_token')}`,
+            'Content-Type': 'application/json',
+            'X-CSRFToken': getCookie('csrftoken')
+        }
+    }).then(() => location.reload());
+}
+</script>
+{% endblock %}

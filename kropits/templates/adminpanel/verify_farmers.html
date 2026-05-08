@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block content %}
+<h2>{% trans "Verify Farmers" %}</h2>
+
+<div class="row">
+    {% for farmer in farmers %}
+    <div class="col-md-4 mb-3">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{ farmer.get_full_name }}</h5>
+                <p class="card-text">
+                    {% trans "Phone" %}: {{ farmer.phone_number }}<br>
+                    {% trans "Email" %}: {{ farmer.email }}<br>
+                    {% trans "Language" %}: {{ farmer.language_preference }}
+                </p>
+                <button class="btn btn-success btn-sm">{% trans "Verify" %}</button>
+            </div>
+        </div>
+    </div>
+    {% empty %}
+    <div class="col-12">
+        <div class="alert alert-info">{% trans "No farmers to verify." %}</div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-8 mx-auto text-center">
+        <h1 class="display-4 mb-4">{% trans "Welcome to KROPITS" %}</h1>
+        <p class="lead mb-5">{% trans "The future of agritech logistics. Connect directly with farmers, place orders, and get deliveries - all without middlemen." %}</p>
+    </div>
+</div>
+
+<div class="row g-4 mb-5">
+    <div class="col-md-4">
+        <div class="card h-100 text-center">
+            <div class="card-body">
+                <h3 class="card-title">🌾 {% trans "Farmers" %}</h3>
+                <p class="card-text">{% trans "List your products, manage inventory, and sell directly to buyers." %}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100 text-center">
+            <div class="card-body">
+                <h3 class="card-title">🛒 {% trans "Buyers" %}</h3>
+                <p class="card-text">{% trans "Discover nearby farmers, place bulk orders, and get fresh produce delivered." %}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100 text-center">
+            <div class="card-body">
+                <h3 class="card-title">🚚 {% trans "Delivery Partners" %}</h3>
+                <p class="card-text">{% trans "Join our network, pick up orders, and deliver fresh produce to customers." %}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% if not user.is_authenticated %}
+<div class="text-center">
+    <a href="/api/auth/register-page/" class="btn btn-success btn-lg me-3">{% trans "Get Started" %}</a>
+    <a href="/api/auth/login-page/" class="btn btn-outline-success btn-lg">{% trans "Login" %}</a>
+</div>
+{% endif %}
+{% endblock %}

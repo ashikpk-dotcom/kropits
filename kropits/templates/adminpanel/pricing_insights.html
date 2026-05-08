@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block content %}
+<h2>{% trans "Pricing Insights" %}</h2>
+
+<div class="row">
+    {% for product in products %}
+    <div class="col-md-3 mb-3">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{ product.name }}</h5>
+                <p class="card-text">
+                    {% trans "Category" %}: {{ product.get_category_display }}<br>
+                    {% trans "Price" %}: ₹{{ product.price_per_unit }}/{{ product.get_unit_display }}<br>
+                    {% trans "Farmer" %}: {{ product.farmer.get_full_name }}
+                </p>
+            </div>
+        </div>
+    </div>
+    {% empty %}
+    <div class="col-12">
+        <div class="alert alert-info">{% trans "No products available." %}</div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

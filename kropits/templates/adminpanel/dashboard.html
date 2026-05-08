@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block content %}
+<h2>{% trans "Admin Dashboard" %}</h2>
+
+<div class="row mb-4">
+    <div class="col-md-3 mb-3">
+        <div class="card bg-primary text-white">
+            <div class="card-body">
+                <h5>{% trans "Total Users" %}</h5>
+                <h3>{{ total_users }}</h3>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 mb-3">
+        <div class="card bg-success text-white">
+            <div class="card-body">
+                <h5>{% trans "Farmers" %}</h5>
+                <h3>{{ total_farmers }}</h3>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 mb-3">
+        <div class="card bg-info text-white">
+            <div class="card-body">
+                <h5>{% trans "Buyers" %}</h5>
+                <h3>{{ total_buyers }}</h3>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 mb-3">
+        <div class="card bg-warning text-white">
+            <div class="card-body">
+                <h5>{% trans "Orders" %}</h5>
+                <h3>{{ total_orders }}</h3>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6 mb-3">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">{% trans "Quick Actions" %}</h5>
+            </div>
+            <div class="card-body">
+                <a href="/api/admin/verify-farmers/" class="btn btn-success mb-2 w-100">{% trans "Verify Farmers" %}</a>
+                <a href="/api/admin/orders-overview/" class="btn btn-primary mb-2 w-100">{% trans "Orders Overview" %}</a>
+                <a href="/api/admin/pricing-insights/" class="btn btn-info w-100">{% trans "Pricing Insights" %}</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 mb-3">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">{% trans "Statistics" %}</h5>
+            </div>
+            <div class="card-body">
+                <p>{% trans "Available Products" %}: {{ total_products }}</p>
+                <p>{% trans "Pending Orders" %}: {{ pending_orders }}</p>
+                <p>{% trans "Delivery Partners" %}: {{ total_delivery_partners }}</p>
+                <p>{% trans "Available Partners" %}: {{ available_partners }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
