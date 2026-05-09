@@ -22,7 +22,7 @@ LOGGING = {
     },
 }
 
-ALLOWED_HOSTS = os.environ("ALLOW_HOSTS", default="localhost,127.0.0.1").split(",")
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", default="localhost,127.0.0.1").split(",")
 
 INSTALLED_APPS = [
     "django.contrib.admin",
